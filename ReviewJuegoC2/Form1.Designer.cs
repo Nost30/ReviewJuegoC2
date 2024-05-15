@@ -50,10 +50,11 @@
             // 
             // TxtId
             // 
-            this.TxtId.Location = new System.Drawing.Point(53, 97);
+            this.TxtId.Location = new System.Drawing.Point(55, 97);
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(100, 20);
             this.TxtId.TabIndex = 1;
+            this.TxtId.TextChanged += new System.EventHandler(this.TxtId_TextChanged_1);
             // 
             // TxtJuego
             // 
@@ -69,6 +70,7 @@
             this.ComboBoxJuego.Name = "ComboBoxJuego";
             this.ComboBoxJuego.Size = new System.Drawing.Size(121, 21);
             this.ComboBoxJuego.TabIndex = 3;
+            this.ComboBoxJuego.SelectedIndexChanged += new System.EventHandler(this.ComboBoxJuego_SelectedIndexChanged_1);
             // 
             // BtnBuscar
             // 
@@ -76,8 +78,9 @@
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
             this.BtnBuscar.TabIndex = 4;
-            this.BtnBuscar.Text = "button1";
+            this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click_1);
             // 
             // BtnAgregar
             // 
@@ -85,8 +88,9 @@
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
             this.BtnAgregar.TabIndex = 5;
-            this.BtnAgregar.Text = "button2";
+            this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click_1);
             // 
             // BtnActualizar
             // 
@@ -94,8 +98,9 @@
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(75, 23);
             this.BtnActualizar.TabIndex = 6;
-            this.BtnActualizar.Text = "button3";
+            this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.UseVisualStyleBackColor = true;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click_1);
             // 
             // BtnEliminar
             // 
@@ -103,8 +108,9 @@
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 7;
-            this.BtnEliminar.Text = "button4";
+            this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnRefrescar
             // 
@@ -112,8 +118,9 @@
             this.BtnRefrescar.Name = "BtnRefrescar";
             this.BtnRefrescar.Size = new System.Drawing.Size(75, 23);
             this.BtnRefrescar.TabIndex = 8;
-            this.BtnRefrescar.Text = "button5";
+            this.BtnRefrescar.Text = "Refrescar";
             this.BtnRefrescar.UseVisualStyleBackColor = true;
+            this.BtnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click_1);
             // 
             // Form1
             // 

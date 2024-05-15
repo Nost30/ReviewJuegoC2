@@ -36,22 +36,6 @@ namespace ReviewJuegoC2
             auto = false;
         }
 
-        private void BtnAgregarJuego_Click(object sender, EventArgs e)
-        {
-            SqlParameter[] parametros = new SqlParameter[9];
-            parametros[0] = new SqlParameter("@NombreJuego", TxtJuego.Text);
-            parametros[1] = new SqlParameter("@IdGenero", ComboBoxGenero.SelectedValue);
-            parametros[2] = new SqlParameter("@IdDesarrolladora", ComboBoxDesarrolladora.SelectedValue);
-            parametros[3] = new SqlParameter("@IdPlataforma", ComboBoxPlataforma.SelectedValue);
-            parametros[4] = new SqlParameter("@FechaLanzamiento", DTTFechaLanzamiento.Value);
-            parametros[5] = new SqlParameter("@NumeroJugadores", TxtNumJugadores.Text);
-            parametros[6] = new SqlParameter("@Metascore", TxtMetascore.Text);
-            parametros[7] = new SqlParameter("@PuntajeUsuario", TxtPuntajeUsuario.Text);
-            parametros[8] = new SqlParameter("@IdUsuarioCrea", 1);
-
-            ConexionSQL.ExecuteStoredProcedure("SP_AgregarJuego", parametros);
-            MessageBox.Show("Registro exitoso");
-        }
 
         private string connectionString = "Data Source=localhost;Initial Catalog=ReviewJuego;Integrated Security=True";
 
@@ -87,6 +71,33 @@ namespace ReviewJuegoC2
         private void FormularioAgregar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlParameter[] parametros = new SqlParameter[9];
+            parametros[0] = new SqlParameter("@NombreJuego", TxtJuego.Text);
+            parametros[1] = new SqlParameter("@IdGenero", ComboBoxGenero.SelectedValue);
+            parametros[2] = new SqlParameter("@IdDesarrolladora", ComboBoxDesarrolladora.SelectedValue);
+            parametros[3] = new SqlParameter("@IdPlataforma", ComboBoxPlataforma.SelectedValue);
+            parametros[4] = new SqlParameter("@FechaLanzamiento", DTTFechaLanzamiento.Value);
+            parametros[5] = new SqlParameter("@NumeroJugadores", TxtNumJugadores.Text);
+            parametros[6] = new SqlParameter("@Metascore", TxtMetascore.Text);
+            parametros[7] = new SqlParameter("@PuntajeUsuario", TxtPuntajeUsuario.Text);
+            parametros[8] = new SqlParameter("@IdUsuarioCrea", 1);
+
+            ConexionSQL.ExecuteStoredProcedure("SP_AgregarJuego", parametros);
+            MessageBox.Show("Registro exitoso");
+        }
+
+        private void TxtId_TextChanged(object sender, EventArgs e)
+        {
+            // Establecer el TextBox de ID como de solo lectura
+            TxtId.ReadOnly = true;
+
+            // Obtener y mostrar el siguiente ID disponible
+            int siguienteId = GetNextAvailableGameId();
+            TxtId.Text = siguienteId.ToString();
         }
     }
 }
