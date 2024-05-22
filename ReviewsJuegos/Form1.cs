@@ -161,5 +161,10 @@ WHERE nombrejuego LIKE '%" + buscarTexto + "%'";
         {
             My.MyProject.Forms.AgregarDesarrolladora.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
